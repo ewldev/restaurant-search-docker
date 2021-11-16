@@ -19,6 +19,7 @@ const image = require('./controllers/restaurant');
 // });
 
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 app.use(cors())
 app.use(express.json());
@@ -29,6 +30,6 @@ app.get('/', (req, res)=> {res.send("LOOK ITS WORKING") })
 // app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
 app.post('/search', (req, res) => { image.handleApiCall(req, res)})
 
-app.listen(3000, ()=> {
-  console.log('app is running on port 3000');
+app.listen(PORT, ()=> {
+  console.log(`listening on port ${PORT}...`);
 })

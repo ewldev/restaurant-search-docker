@@ -46,7 +46,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     // this.setState({searchParams: this.state.input});
-      fetch('http://localhost:3000/search', {
+      fetch('http://localhost:8000/search', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
