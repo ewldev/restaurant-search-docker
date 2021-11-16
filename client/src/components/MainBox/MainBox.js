@@ -1,7 +1,7 @@
 import React from 'react';
-import './ImageLinkForm.css';
+import './mainbox.css';
 
-const ImageLinkForm = ({ onInputChange, onInputChange2, onButtonSubmit }) => {
+const MainBox = ({ onInputChange, onInputChange2, onButtonSubmit }) => {
   return (
     <div>
       <p className='f1 pt4'>
@@ -30,4 +30,4 @@ const ImageLinkForm = ({ onInputChange, onInputChange2, onButtonSubmit }) => {
   );
 }
 
-export default ImageLinkForm;
+export default MainBox;

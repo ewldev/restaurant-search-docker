@@ -3,7 +3,7 @@ import CardList from './components/Card/CardList';
 // import Navigation from './components/Navigation/Navigation';
 // import Signin from './components/Signin/Signin';
 // import Register from './components/Register/Register';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import MainBox from './components/MainBox/MainBox';
 import './App.css';
 
 const initialState = {
@@ -81,7 +81,7 @@ class App extends Component {
         // route === 'home'
           // ? <div>
           <div>
-              <ImageLinkForm
+              <MainBox
                 onInputChange={this.onInputChange}
                 onInputChange2={this.onInputChange2}
                 onButtonSubmit={this.onButtonSubmit}
