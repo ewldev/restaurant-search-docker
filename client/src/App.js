@@ -9,31 +9,13 @@ import './App.css';
 const initialState = {
   input: '',
   input2: '',
-  stores: [],
-  route: 'home',
-  // route: 'signin',
-  isSignedIn: false,
-  user: {
-    id: '',
-    name: '',
-    email: '',
-    joined: ''
-  }
+  stores: [],  
 }
 
 class App extends Component {
   constructor() {
     super();
     this.state = initialState;
-  }
-
-  loadUser = (data) => {
-    this.setState({user: {
-      id: data.id,
-      name: data.name,
-      email: data.email,
-      joined: data.joined
-    }})
   }
 
   onInputChange = (event) => {
@@ -45,8 +27,7 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    // this.setState({searchParams: this.state.input});
-      fetch('http://localhost:8000/search', {
+    fetch('http://localhost:8000/search', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -59,27 +40,10 @@ class App extends Component {
       .catch(err => console.log(err))      
   }
 
-  onRouteChange = (route) => {
-    if (route === 'signout') {
-      this.setState(initialState)
-    } else if (route === 'home') {
-      this.setState({isSignedIn: true})
-    }
-    this.setState({route: route});
-  }
-
   render() {
     const { stores } = this.state;
-    // const { stores, searchField, isSignedIn, route } = this.state;
-    // const filteredStores = stores.filter(store => {
-    //   return store.name.toLowerCase().includes(searchField.toLowerCase());
-    // })
-    // console.log('stores',stores);
     return (
       <div className="App">
-        {// <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>}        
-        // route === 'home'
-          // ? <div>
           <div>
               <MainBox
                 onInputChange={this.onInputChange}
@@ -87,13 +51,7 @@ class App extends Component {
                 onButtonSubmit={this.onButtonSubmit}
               />
               <CardList stores={stores} />
-            </div>
-          // : (
-          //    route === 'signin'
-          //    ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-          //    : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-          //   )
-        }
+            </div>          
       </div>
     );
   }
