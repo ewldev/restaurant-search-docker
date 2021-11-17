@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import CardList from './components/Card/CardList';
-// import Navigation from './components/Navigation/Navigation';
-// import Signin from './components/Signin/Signin';
-// import Register from './components/Register/Register';
 import MainBox from './components/MainBox/MainBox';
 import './App.css';
+
+const API_URL = 'http://localhost:8000';
 
 const initialState = {
   input: '',
@@ -27,7 +26,7 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    fetch('http://localhost:8000/search', {
+    fetch(`${API_URL}/search`, {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
