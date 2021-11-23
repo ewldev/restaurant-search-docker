@@ -3,7 +3,7 @@ import CardList from './components/Card/CardList';
 import MainBox from './components/MainBox/MainBox';
 import './App.css';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://3.82.19.211:8000';
 
 const initialState = {
   input: '',
